@@ -1,0 +1,42 @@
+VoGeneratorRails
+================
+Version: v1.0
+--------------
+
+
+Description: 
+Creates Value Objects(VO) for flex UI in the directory "flexapp/vo_files" for the respective models/table_names. 
+These are the ActionScript files that are used by the Flex application. 
+These ActionScript files are used in mapping to the respective models for the back end.
+This plugin includes a new task('create_vo_files') in your application.
+Can be used to create VO files for all the models*, using the task name 'create_vo_files'.
+Can be used to create VO files for the list of models with env variable 'MODEL_NAMES', sufficed to the task name.
+Can be used to create VO files excluding a few models with env variable 'SKIP_MODELS', sufficed to the task name.
+This task replaces the old VO files that would have been generated earlier.
+
+This does not generate VO files for abstract classes.
+This does not generate VO files for non ActiveRecord model
+
+Finally, make sure you spell the names right, specially the model names. 
+--------------
+
+
+Example
+=======
+You can create VO files for all the models existing in your application*
+
+1. Create VO files for all the models in your application
+ex: rake create_vo_files
+
+2. Create VO files only for a few models
+ex: rake create_vo_files MODEL_NAME=blog_post,comment
+
+3. Create VO files with few models excluded
+ex: rake create_vo_files SKIP_MODEL=data_file,document
+
+
+* All models include:
+1. Table exists for the respective model
+2. Model class in not an abstract class
+
+Copyright (c) 2011 [Vineeth Pradhan], released under the MIT license
