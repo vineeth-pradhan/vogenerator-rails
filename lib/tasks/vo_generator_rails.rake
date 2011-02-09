@@ -6,7 +6,7 @@ desc "Generates the VO files for the project models.
     task :create_vo_files do
       EXCLUDE_MODELS = []
       require "config/environment"
-      require "#{RAILS_ROOT}/vendor/plugins/vo_generator_rails/lib/vo_generator_rails.rb"
+      require "#{RAILS_ROOT}/vendor/plugins/vogenerator-rails/lib/vo_generator_rails.rb"
       FileUtils.mkpath("flexapp/vo_files")
       
       if ENV['SKIP_MODELS']
@@ -19,7 +19,7 @@ desc "Generates the VO files for the project models.
           x.camelize      
         end
       else
-        class_names = VoFileCreation.get_model_names.collect do |x|
+        class_names = VoGeneratorRails.get_model_names.collect do |x|
           x.chomp(".rb").camelize
         end
       end
