@@ -7,7 +7,7 @@ Version: v1.0
 Description: 
 Creates Value Objects(VO) for flex UI in the directory "flexapp/vo_files" for the respective models/table_names. 
 These are the ActionScript files that are used by the Flex application. 
-These ActionScript files are used in mapping to the respective models for the back end.
+These ActionScript files are used in mapping the respective models to the back end.
 This plugin includes a new task('create_vo_files') in your application.
 Can be used to create VO files for all the models*, using the task name 'create_vo_files'.
 Can be used to create VO files for the list of models with env variable 'MODEL_NAMES', sufficed to the task name.
@@ -29,10 +29,10 @@ You can create VO files for all the models existing in your application*
 ex: rake create_vo_files
 
 2. Create VO files only for a few models
-ex: rake create_vo_files MODEL_NAME=blog_post,comment
+ex: rake create_vo_files MODEL_NAMES=blog_post,comment
 
 3. Create VO files with few models excluded
-ex: rake create_vo_files SKIP_MODEL=data_file,document
+ex: rake create_vo_files SKIP_MODELS=data_file,document
 
 
 * All models include:
